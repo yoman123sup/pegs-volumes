@@ -108,7 +108,7 @@ public class VolumetricMistParticle extends SingleQuadParticle {
             computedAlpha *= cfg.shaderOpacityScale;
         }
 
-        Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
+        Camera camera = Minecraft.getInstance().gameRenderer.mainCamera();
         if (camera != null) {
             Vec3 camPos = camera.position();
             double dx = this.x - camPos.x;
@@ -131,14 +131,14 @@ public class VolumetricMistParticle extends SingleQuadParticle {
     }
 
     @Override
-    protected int getLightColor(float partialTick) {
+    protected int getLightCoords(float partialTick) {
         if (this.emissiveGlow) {
-            int baseLight = super.getLightColor(partialTick);
+            int baseLight = super.getLightCoords(partialTick);
             int blockLight = Math.max((baseLight >> 4) & 0xF, 12);
             int skyLight = (baseLight >> 20) & 0xF;
             return (skyLight << 20) | (blockLight << 4);
         }
-        return super.getLightColor(partialTick);
+        return super.getLightCoords(partialTick);
     }
 
     @Override
