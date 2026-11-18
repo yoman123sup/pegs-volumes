@@ -64,7 +64,7 @@ public class VolumetricMistParticle extends SingleQuadParticle {
 
     @Override
     protected SingleQuadParticle.Layer getLayer() {
-        return SingleQuadParticle.Layer.TRANSLUCENT;
+        return SingleQuadParticle.Layer.bySprite(this.sprite);
     }
 
     @Override
