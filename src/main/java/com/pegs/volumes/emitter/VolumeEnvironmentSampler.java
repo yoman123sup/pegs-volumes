@@ -37,7 +37,7 @@ public final class VolumeEnvironmentSampler {
 
     public void tick(Minecraft client) {
         ClientLevel level = client.level;
-        Camera camera = client.gameRenderer.getMainCamera();
+        Camera camera = client.gameRenderer.mainCamera();
         if (level == null || camera == null) {
             return;
         }
