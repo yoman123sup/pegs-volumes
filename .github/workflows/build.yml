@@ -1,0 +1,31 @@
+name: Build Peg's Volumes (Fabric 26.3)
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 9.0.0
+
+      - name: Build Mod JAR
+        run: gradle build
+
+      - name: Upload Compiled JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: pegs-volumes-1.0.0
+          path: build/libs/pegs-volumes-1.0.0.jar
