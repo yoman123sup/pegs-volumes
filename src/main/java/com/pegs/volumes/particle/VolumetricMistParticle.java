@@ -7,7 +7,7 @@ import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.SingleQuadParticle;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.client.resources.model.Material;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
@@ -26,7 +26,7 @@ public class VolumetricMistParticle extends SingleQuadParticle {
             ClientLevel level,
             double x, double y, double z,
             double xd, double yd, double zd,
-            TextureAtlasSprite sprite,
+            Material.Baked sprite,
             VolumeSpec spec
     ) {
         super(level, x, y, z, sprite);
