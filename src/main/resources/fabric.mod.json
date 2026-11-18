@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "pegsvolumes",
+  "version": "${version}",
+  "name": "Peg's Volumes",
+  "description": "Performance-friendly, shader-compatible volumetric mist, smoke, heat-haze, sea-spray, and atmospheric volumes for every biome and environment.",
+  "authors": [
+    "Peg"
+  ],
+  "contact": {
+    "sources": "https://github.com/pegs/pegs-volumes"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.pegs.volumes.PegsVolumesClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": ">=0.160.5+26.3"
+  },
+  "suggests": {
+    "sodium": ">=0.9.2",
+    "iris": ">=1.11.6"
+  }
+}
